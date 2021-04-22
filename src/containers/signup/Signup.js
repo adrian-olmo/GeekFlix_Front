@@ -24,20 +24,21 @@ const Signup = () => {
     return (
 
         <>
-            <div>
+            <div className="signup-form-box">
 
                 <form onSubmit={signupHandler} className="signup-form">
+                    <h2 className="text-h2">¡Regístrate y empieza a disfrutar!</h2>
 
-                    <input className="input" type="email" name="email" placeholder="Enter your email" required
+                    <input className="input signup-input" type="email" name="email" placeholder="Enter your email" required
                         onInput={e => getEmailChange(e)}></input>
 
-                    <input className="input" type="password" name="password" placeholder="Enter your password" required
+                    <input className="input signup-input" type="password" name="password" placeholder="Enter your password" required
                         onInput={e => getPasswordChange(e)}></input>
 
-                    <input className="input" type="password" name="confirm-password" placeholder="Repeat your password" required
+                    <input className="input signup-input" type="password" name="confirm-password" placeholder="Repeat your password" required
                         onInput={e => getConfirmPasswordChange(e)}></input>
 
-                    <button className="basic-button" type="submit">Signup</button>
+                    <button className="button signup-button" type="submit">Signup</button>
 
                 </form>
             </div>

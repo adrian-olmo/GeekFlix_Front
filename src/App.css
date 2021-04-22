@@ -1,4 +1,58 @@
+:root {
+  /* Colors palette */
+  --light1: #6c939f;
+  --light2: #38616d;
+  --medium: #004256;
+  --dark1: #002631;
+  --dark2: #000000;
+  --orange: rgb(255, 166, 0);
+  --boxAlpha: rgba(0, 66, 86, 0.6);
+
+  /* RGB */
+
+  /* --light1: (108,147,159);
+  --light2: (56,97,109)
+  --medium: (0,66,86);
+  --dark1: (0,38,49);
+  --dark2: (0,0,0); */
+}
+
+/* Background */
+
 .bg {
-  background-color: #282c34;
+  background-color: var(--dark2);
   min-height: 100vh;
+  background-image: url("./img/banner.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Texts */
+
+.text-h2 {
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+}
+
+/* Button */
+
+.button {
+  background-color: var(--orange);
+  border-radius: 0.4rem;
+  cursor: pointer;
+  font-size: large;
+  font-weight: bold;
+  border: none;
+}
+
+/* Input */
+.input {
+  border-radius: 0.4rem;
+  text-align: center;
+  background-color: var(--dark1);
+  color: white;
+  border: 0.1rem solid var(--dark2);
+  font-size: large;
 }
