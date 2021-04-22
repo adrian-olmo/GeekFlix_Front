@@ -3,30 +3,62 @@ import "./Signup.css";
 
 const Signup = () => {
 
-    const [email, setEmail] = useState(null);
-    const [password, setPassword] = useState(null);
-    const [confirmPassword, setConfirmPassword] = useState(null);
+    const [passwordIsValid, setPasswordIsValid] = useState(false);
+    const [confirmPasswordIsValid, setConfirmPasswordIsValid] = useState(false);
 
+    let email;
+    let password;
+    let confirmedPassword;
+
+    // Using a ref in a functional component:
+    // https://es.reactjs.org/docs/refs-and-the-dom.html
     let textInput = useRef(null);
 
     useEffect(() => {
         textInput.current.focus();
     }, []);
 
-    const signupHandler = () => {
-        console.log("Signup handler is working");
-    }
-
     const getEmailChange = (event) => {
-        console.log(event.target.value);
+        email = event.target.value;
     }
 
     const getPasswordChange = (event) => {
-        console.log(event.target.value);
+        if (event.target.value.length < 4) {
+            console.log("La contraseña no es válida");
+            setPasswordIsValid(false);
+        } else {
+            password = event.target.value;
+            setPasswordIsValid(true);
+        }
     }
 
     const getConfirmPasswordChange = (event) => {
+
+        confirmedPassword = event.target.value;
+
+        // password is undefined
+        console.log(`${password} -- ${confirmedPassword}`);
+
+        if (confirmedPassword === password) {
+            console.log("Las contraseñas coinciden");
+            setConfirmPasswordIsValid(true);
+        } else {
+
+            console.log("Las contraseñas no coinciden");
+        }
         console.log(event.target.value);
+    }
+
+    const signupHandler = async (e) => {
+        e.preventDefault();
+        console.log("Signup handler is working");
+
+        // Validar las password (y el email si es necesario)
+
+        // si OK, hacer el fetch al endpoint de registro.
+
+        // const res = await fetchSignup(email, password);
+        // Manejar los mensajes de error
     }
 
     return (
