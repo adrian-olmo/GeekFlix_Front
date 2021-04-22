@@ -1,9 +1,17 @@
-import { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Signup.css";
 
 const Signup = () => {
 
-    // const [status, setStatus] = useState(true);
+    const [email, setEmail] = useState(null);
+    const [password, setPassword] = useState(null);
+    const [confirmPassword, setConfirmPassword] = useState(null);
+
+    let textInput = useRef(null);
+
+    useEffect(() => {
+        textInput.current.focus();
+    }, []);
 
     const signupHandler = () => {
         console.log("Signup handler is working");
@@ -30,7 +38,7 @@ const Signup = () => {
                     <h2 className="text-h2">¡Regístrate y empieza a disfrutar!</h2>
 
                     <input className="input signup-input" type="email" name="email" placeholder="Enter your email" required
-                        onInput={e => getEmailChange(e)}></input>
+                        ref={textInput} onInput={e => getEmailChange(e)}></input>
 
                     <input className="input signup-input" type="password" name="password" placeholder="Enter your password" required
                         onInput={e => getPasswordChange(e)}></input>
