@@ -5,9 +5,10 @@ const Signup = () => {
 
     const [passwordIsValid, setPasswordIsValid] = useState(false);
     const [confirmPasswordIsValid, setConfirmPasswordIsValid] = useState(false);
+    const [password, setPassword] = useState("");
 
     let email;
-    let password;
+    // let password;
     let confirmedPassword;
 
     // Using a ref in a functional component:
@@ -27,7 +28,8 @@ const Signup = () => {
             console.log("La contraseña no es válida");
             setPasswordIsValid(false);
         } else {
-            password = event.target.value;
+            setPassword(event.target.value);
+            // password = event.target.value;
             setPasswordIsValid(true);
         }
     }
@@ -43,7 +45,7 @@ const Signup = () => {
             console.log("Las contraseñas coinciden");
             setConfirmPasswordIsValid(true);
         } else {
-
+            setConfirmPasswordIsValid(false);
             console.log("Las contraseñas no coinciden");
         }
         console.log(event.target.value);
@@ -51,7 +53,14 @@ const Signup = () => {
 
     const signupHandler = async (e) => {
         e.preventDefault();
-        console.log("Signup handler is working");
+        if (passwordIsValid && confirmPasswordIsValid) {
+            alert("Registro realizado correctamente");
+            // console.log("Signup handler is working");
+        } else {
+            alert("Algo falla: descibir errores");
+        }
+
+
 
         // Validar las password (y el email si es necesario)
 
