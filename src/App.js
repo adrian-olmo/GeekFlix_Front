@@ -5,15 +5,16 @@ import { Header } from './components/header/Header';
 import Login from './containers/login/Login';
 import CardMovie from './components/cardMovie/CardMovie';
 import Signup from './containers/signup/Signup';
+import { Carousel } from './components/carousel/Carousel';
 
 function App() {
   return (
     <div className="bg">
       <Header />
-      <Signup></Signup>
+      {/* <Signup /> */}
       {/* <CardMovie></CardMovie> */}
-      <Signup></Signup>
-      <Login></Login>
+      <Carousel />
+      {/* <Login /> */}
       <Footer />
     </div>
   );
