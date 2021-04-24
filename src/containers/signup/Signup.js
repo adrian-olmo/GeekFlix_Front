@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import fetchSignup from '../../services/fetchSignup.js'
 import "./Signup.css";
 
 const Signup = () => {
@@ -6,8 +7,9 @@ const Signup = () => {
     const [passwordIsValid, setPasswordIsValid] = useState(false);
     const [confirmPasswordIsValid, setConfirmPasswordIsValid] = useState(false);
     const [password, setPassword] = useState("");
+    const [email, setEmail] = useState("");
 
-    let email;
+    // let email;
     // let password;
     let confirmedPassword;
 
@@ -20,7 +22,8 @@ const Signup = () => {
     }, []);
 
     const getEmailChange = (event) => {
-        email = event.target.value;
+        // email = event.target.value;
+        setEmail(event.target.value);
     }
 
     const getPasswordChange = (event) => {
@@ -54,7 +57,11 @@ const Signup = () => {
     const signupHandler = async (e) => {
         e.preventDefault();
         if (passwordIsValid && confirmPasswordIsValid) {
-            alert("Registro realizado correctamente");
+
+            console.log(email, password);
+
+            const newUser = await fetchSignup(email, password);
+            // alert("Registro realizado correctamente");
             // console.log("Signup handler is working");
         } else {
             alert("Algo falla: descibir errores");

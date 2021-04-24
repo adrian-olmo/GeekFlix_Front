@@ -6,8 +6,8 @@ function App() {
   return (
     <div className="bg">
 
-      {/* <Signup></Signup> */}
-      <CardMovie></CardMovie>
+      <Signup></Signup>
+      {/* <CardMovie></CardMovie> */}
 
     </div>
   );
