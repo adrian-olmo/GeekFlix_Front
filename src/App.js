@@ -12,7 +12,7 @@ function App() {
 
 
 
-      <Signup></Signup>
+      {/* <Signup></Signup> */}
       <Login></Login>
       <Footer />
     </div>

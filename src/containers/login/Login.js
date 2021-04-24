@@ -1,13 +1,12 @@
 import { useEffect, useRef, useState } from "react"
 import "./Login.css"
+import { fetchLogin } from "../../services/fetchLogin.js";
 
 const Login = () => {
 
-    const [email, setEmail] = useState(false)
-    const [password, setPassword] = useState("")
+    let [email, setEmail] = useState("")
+    let [password, setPassword] = useState("")
 
-    let loginEmail
-    let loginPassword
     let inputLogin = useRef(null);
 
     useEffect(() => {
@@ -15,20 +14,25 @@ const Login = () => {
     }, [])
 
     const getEmail = (event) => {
-        loginEmail = event.target.value;
+        setEmail(event.target.value);
     }
 
     const getPassword = (event) => {
-        loginPassword = event.target.value
+        setPassword(event.target.value)
     }
 
     const loginHandler = async (e) => {
         e.preventDefault();
-        if (getEmail === "" || getPassword === "") {
-            alert('Campos vacios')
+        console.log(email, password);
+        if (email && password) {
+            console.log(email, password);
+            const loginUser = await fetchLogin(email, password);
+            console.log(loginUser);
+
         } else {
-            alert('Iniciando sesion')
+            alert('Algo salio mal')
         }
+
     }
 
     return (
