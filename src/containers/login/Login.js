@@ -45,7 +45,7 @@ const Login = () => {
                     <input className='input login-input' type='password' name='password' placeholder='Password' required
                         onInput={e => getPassword(e)}></input>
 
-                    <button className='button login-button' type='submit'>Inicar Sesion</button>
+                    <button className='button login-button' type='submit'>Login</button>
 
                 </form>
             </div>
