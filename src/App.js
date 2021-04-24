@@ -1,4 +1,5 @@
 import './App.css';
+import Login from './containers/login/Login';
 import Signup from './containers/signup/Signup';
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <div className="bg">
 
       <Signup></Signup>
+      <Login></Login>
 
     </div>
   );

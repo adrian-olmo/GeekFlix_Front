@@ -1,0 +1,22 @@
+.login-form-container {
+  background-color: var(--boxAlpha);
+  padding: 2rem;
+  max-width: 30rem;
+  margin: auto;
+  border-radius: 1rem;
+}
+
+.login-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 30rem;
+  row-gap: 1rem;
+  border-radius: 0.8rem;
+}
+
+.login-input {
+  min-width: 90%;
+  max-width: 20rem;
+  height: 3rem;
+}
