@@ -13,9 +13,12 @@ export class Footer extends React.Component {
 
         return (
             <>
-
-
                 <footer className="footer-distributed">
+
+                    <div className="footer-left">
+                        <h4 className="footer-title">GeekFlix</h4>
+                        <p>Develop by Ruben & Adrian</p>
+                    </div>
 
                     <div className="footer-right">
                         <a href="#">
@@ -32,9 +35,7 @@ export class Footer extends React.Component {
                         </a>
                     </div>
 
-                    <div className="footer-left">
-                        <p>Develop by Ruben & Adrian</p>
-                    </div>
+
                 </footer>
             </>
         )

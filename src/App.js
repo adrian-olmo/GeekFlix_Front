@@ -10,9 +10,9 @@ function App() {
   return (
     <div className="bg">
       <Header />
-      {/* <Signup></Signup> */}
+      <Signup></Signup>
 
-      <CardMovie></CardMovie>
+      {/* <CardMovie></CardMovie> */}
       {/* <Signup></Signup> */}
       {/* <Login></Login> */}
       <Footer />
