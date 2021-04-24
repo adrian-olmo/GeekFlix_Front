@@ -27,7 +27,6 @@ const Login = () => {
         if (email && password) {
             console.log(email, password);
             const loginUser = await fetchLogin(email, password);
-            console.log(loginUser);
 
         } else {
             alert('Algo salio mal')

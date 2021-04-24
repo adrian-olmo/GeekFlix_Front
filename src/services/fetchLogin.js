@@ -1,7 +1,4 @@
 export const fetchLogin = async (email, password) => {
-
-
-
     try {
         console.log(`Datos recibidos: ${email} y ${password}`);
         console.log('Consultando datos');
