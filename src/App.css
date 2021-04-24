@@ -17,14 +17,19 @@
   --dark2: (0,0,0); */
 }
 
+.app-body {
+  height: 84vh;
+}
+
 /* Background */
 
 .bg {
   background-color: var(--dark2);
   min-height: 100vh;
   background-image: url("./img/banner.jpg");
-  background-size: cover;
-  background-position: center;
+  /* background-size: auto; */
+  /* background-size: cover; */
+  background-position: initial;
   background-repeat: no-repeat;
 }
 

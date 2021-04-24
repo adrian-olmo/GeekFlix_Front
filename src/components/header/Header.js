@@ -15,22 +15,24 @@ export class Header extends React.Component {
     render() {
 
         return (
+            // <header className='header'>
+            //     <div className='navbar-header'>
+            //         <nav className='navbar'>
+            //             <button className="button header-button">Signup</button>
+            //             <button className="button header-button">Login</button>
+            //         </nav>
+            //     </div>
+            // </header>
+
             <header className='header'>
                 <div className='navbar-header'>
                     <nav className='navbar'>
-                        <div className='text'>
-                            <span>Login</span>
-                        </div>
-
-                        <div className='text'>
-                            <span>Register</span>
-                        </div>
+                        <button className="button header-button">Registrarse</button>
+                        <button className="button header-button">Iniciar sesión</button>
                     </nav>
                 </div>
             </header>
         )
 
     }
-
-
 }

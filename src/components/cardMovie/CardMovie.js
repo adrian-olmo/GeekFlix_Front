@@ -5,7 +5,7 @@ const CardMovie = () => {
 
     return (
 
-        <>
+        <div className="app-body">
             <div className="card-movie-box">
                 <div className="card-movie">
 
@@ -19,7 +19,7 @@ const CardMovie = () => {
 
             </div>
 
-        </>
+        </div>
 
     )
 }
