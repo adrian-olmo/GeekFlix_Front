@@ -1,7 +1,5 @@
 import { Component } from "react";
-import AliceCarousel from 'react-alice-carousel';
-import "react-alice-carousel/lib/alice-carousel.css";
-
+import "./Carousel.css"
 
 //Images
 import Kong from "../../img/carousel/kong.jpg"
@@ -30,13 +28,24 @@ export function Carousel() {
     }
  */
     return (
-        <>
-            <AliceCarousel autoPlay autoPlayInterval="2000" animationDuration="3000" infinite>
-                <img src={Kong} className="sliderimg" />
-                <img src={WonderWoman} className="sliderimg" />
-                <img src={BadBoys} className="sliderimg" />
-            </AliceCarousel>
-        </>
+        <div class="container-all">
+            <div class="slide">
+
+                <div class="item-slide">
+                    <img src={Kong} />
+                </div>
+
+                <div class="item-slide">
+                    <img src={BadBoys} />
+                </div>
+
+                <div class="item-slide">
+                    <img src={RoboSiglo} />
+                </div>
+
+            </div>
+
+        </div>
     )
 
 }
