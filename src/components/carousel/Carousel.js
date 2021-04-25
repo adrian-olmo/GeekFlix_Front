@@ -31,7 +31,7 @@ export function Carousel() {
  */
     return (
         <>
-            <AliceCarousel autoPlay autoPlayInterval="3000">
+            <AliceCarousel autoPlay autoPlayInterval="2000" animationDuration="3000" infinite>
                 <img src={Kong} className="sliderimg" />
                 <img src={WonderWoman} className="sliderimg" />
                 <img src={BadBoys} className="sliderimg" />
