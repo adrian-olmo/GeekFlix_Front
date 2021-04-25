@@ -1,13 +1,1 @@
-.container {
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  margin-left: 40em;
-}
 
-/* <AliceCarousel className="container" autoPlay autoPlayInterval="4500">
-                <img src={Kong} className="sliderimg" />
-                <img src={WonderWoman} className="sliderimg" />
-                <img src={BadBoys} className="sliderimg" />
-                <img src={RoboSiglo} className="sliderimg" />
-            </AliceCarousel> */

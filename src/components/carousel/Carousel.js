@@ -1,4 +1,6 @@
 import { Component } from "react";
+import AliceCarousel from 'react-alice-carousel';
+import "react-alice-carousel/lib/alice-carousel.css";
 
 
 //Images
@@ -29,6 +31,11 @@ export function Carousel() {
  */
     return (
         <>
+            <AliceCarousel autoPlay autoPlayInterval="3000">
+                <img src={Kong} className="sliderimg" />
+                <img src={WonderWoman} className="sliderimg" />
+                <img src={BadBoys} className="sliderimg" />
+            </AliceCarousel>
         </>
     )
 
