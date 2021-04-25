@@ -5,12 +5,14 @@ import { Header } from './components/header/Header';
 import Login from './containers/login/Login';
 import CardMovie from './components/cardMovie/CardMovie';
 import Signup from './containers/signup/Signup';
+import DisplayMovies from './containers/displayMovies/DisplayMovies';
 
 function App() {
   return (
     <div className="bg">
       <Header />
       <Signup></Signup>
+      {/* <DisplayMovies></DisplayMovies> */}
 
       {/* <CardMovie></CardMovie> */}
       {/* <Signup></Signup> */}
