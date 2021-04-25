@@ -1,4 +1,4 @@
-import { Component } from "react";
+import { Component, useEffect, useState } from "react";
 import "./Carousel.css"
 
 //Images
@@ -9,30 +9,21 @@ import RoboSiglo from "../../img/carousel/robo.jpg"
 
 export function Carousel() {
 
-    /* constructor(props, context) {
-        super(props, context);
-        this.state = {
-            galleryItems: []
-        }
-    }
+    const [images, setImages] = useState(null);
 
-    getImages() {
+    useEffect(() => {
+        fetchImages()
+    })
 
-        const urlImages = 'http://localhost:5000/movies/poster';
-        const resultImages = await fetch(urlImages, {
-            method: 'GET',
-            headers: { 'Content.Type': 'application/json' }
-        });
-
-        return resultImages
-    }
- */
     return (
         <div class="container-all">
             <div class="slide">
 
                 <div class="item-slide">
-                    <img src={Kong} />
+                    {images.map(imagen => (
+                        <img src={imagen} />
+                    ))}
+
                 </div>
 
                 <div class="item-slide">

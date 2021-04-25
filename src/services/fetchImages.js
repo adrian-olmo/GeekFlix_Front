@@ -5,7 +5,10 @@ const fetchImages = async () => {
         const resultImages = await fetch(urlImages, {
             method: 'GET',
             headers: { 'Content.Type': 'application/json' }
-        })
+        });
+
+        return resultImages
+
     } catch (error) {
         return error
     }
