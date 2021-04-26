@@ -11,8 +11,8 @@ function App() {
   return (
     <div className="bg">
       <Header />
-      <Signup></Signup>
-      {/* <DisplayMovies></DisplayMovies> */}
+      {/* <Signup></Signup> */}
+      <DisplayMovies></DisplayMovies>
 
       {/* <CardMovie></CardMovie> */}
       {/* <Signup></Signup> */}
