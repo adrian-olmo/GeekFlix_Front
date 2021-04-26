@@ -79,7 +79,7 @@ const Signup = () => {
 
     return (
 
-        <>
+        <div className="app-body">
             <div className="signup-form-box">
 
                 <form onSubmit={signupHandler} className="signup-form">
@@ -98,7 +98,7 @@ const Signup = () => {
 
                 </form>
             </div>
-        </>
+        </div>
 
     )
 }

@@ -6,6 +6,7 @@ import Login from './containers/login/Login';
 import CardMovie from './components/cardMovie/CardMovie';
 import Signup from './containers/signup/Signup';
 import { Carousel } from './components/carousel/Carousel';
+import DisplayMovies from './containers/displayMovies/DisplayMovies';
 
 function App() {
   return (
@@ -15,6 +16,12 @@ function App() {
       {/* <CardMovie></CardMovie> */}
       <Carousel />
       {/* <Login /> */}
+      {/* <Signup></Signup> */}
+      <DisplayMovies></DisplayMovies>
+      <Login></Login>
+      {/* <CardMovie></CardMovie> */}
+      {/* <Signup></Signup> */}
+      {/* <Login></Login> */}
       <Footer />
     </div>
   );
