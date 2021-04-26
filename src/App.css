@@ -17,15 +17,22 @@
   --dark2: (0,0,0); */
 }
 
+.app-body {
+  /* height: 80vh; */
+  padding-top: 2rem;
+}
+
 /* Background */
 
 .bg {
   background-color: var(--dark2);
   min-height: 100vh;
   background-image: url("./img/banner.jpg");
-  background-size: cover;
-  background-position: center;
+  /* background-size: auto; */
+  /* background-size: cover; */
+  background-position: initial;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 /* Texts */
@@ -42,8 +49,6 @@
   background-color: var(--orange);
   border-radius: 0.4rem;
   cursor: pointer;
-  font-size: large;
-  font-weight: bold;
   border: none;
 }
 

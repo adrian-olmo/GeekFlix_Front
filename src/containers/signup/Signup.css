@@ -32,6 +32,8 @@
   height: 3rem;
   min-width: 90%;
   max-width: 20rem;
+  font-size: large;
+  font-weight: bold;
 }
 
 .signup-button:hover {

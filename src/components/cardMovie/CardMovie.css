@@ -1,0 +1,38 @@
+.card-movie-box {
+  background-color: var(--boxAlpha);
+  padding: 2rem;
+  /* max-width: 90%; */
+  /* min-width: 90%; */
+  max-width: 14rem;
+  margin: auto;
+  border-radius: 1rem;
+  color: white;
+}
+
+.card-movie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.poster {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.poster > img {
+  width: 94%;
+}
+
+.button-card {
+  width: 94%;
+  height: 2rem;
+  font-weight: bold;
+}
+
+.button-card:hover {
+  background-color: darkred;
+  color: white;
+  transition: 0.3s;
+}
