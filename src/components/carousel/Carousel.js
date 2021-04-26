@@ -12,6 +12,9 @@ import Wick from "../../img/carousel/wick.jpg"
 import MK from "../../img/carousel/mk.jpg"
 import Vengadores from "../../img/carousel/vengadores.jpg"
 import Doorman from "../../img/carousel/doorman.jpg"
+import Skyline from "../../img/carousel/skyline.jpg"
+import Agencia from "../../img/carousel/agencia.jpg"
+import Soul from "../../img/carousel/soul.jpg"
 
 export function Carousel() {
 
@@ -57,11 +60,15 @@ export function Carousel() {
                 </div>
 
                 <div class="item-slide">
-                    <img src={Wick} />
+                    <img src={Skyline} />
                 </div>
 
                 <div class="item-slide">
-                    <img src={MK} />
+                    <img src={Agencia} />
+                </div>
+
+                <div class="item-slide">
+                    <img src={Soul} />
                 </div>
 
             </div>
