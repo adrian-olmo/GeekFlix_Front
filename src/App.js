@@ -14,6 +14,8 @@ function App() {
       {/* <Signup></Signup> */}
       <DisplayMovies></DisplayMovies>
 
+
+      <Login></Login>
       {/* <CardMovie></CardMovie> */}
       {/* <Signup></Signup> */}
       {/* <Login></Login> */}
