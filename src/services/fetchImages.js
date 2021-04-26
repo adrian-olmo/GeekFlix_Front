@@ -1,7 +1,7 @@
-const fetchImages = async () => {
+export const fetchImages = async () => {
 
     try {
-        const urlImages = 'http://localhost:5000/movies/poster'
+        const urlImages = 'http://localhost:5000/movies'
         const resultImages = await fetch(urlImages, {
             method: 'GET',
             headers: { 'Content.Type': 'application/json' }
