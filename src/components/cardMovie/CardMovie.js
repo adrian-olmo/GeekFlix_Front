@@ -2,7 +2,6 @@ import "./CardMovie.css";
 
 const CardMovie = (props) => {
 
-
     return (
 
         <div className="card-movie-box">
