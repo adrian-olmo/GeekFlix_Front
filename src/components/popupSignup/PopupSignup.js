@@ -2,6 +2,10 @@ import './PopupSignup.css'
 
 const PopupSignup = (props) => {
 
+    const goToLoginHandler = () => {
+        // redireccionar a login
+        console.log("Redireccionando a login");
+    }
 
     return (
 
@@ -9,8 +13,9 @@ const PopupSignup = (props) => {
 
             <div className="popup-signup">
                 <div className="popup-text">Se ha registrado correctamente</div>
-                <button className="button popup-button">Aceptar</button>
+                <button onClick={() => { goToLoginHandler() }} className="button popup-button">Aceptar</button>
                 {/* Hay que agregar un onClick que nos redirija a la página de login */}
+                {/* onClick={} */}
             </div>
 
         </div>
