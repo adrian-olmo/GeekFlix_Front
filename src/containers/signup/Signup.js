@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import fetchSignup from '../../services/fetchSignup.js'
 import "./Signup.css";
 import Message from '../../components/message/Message.js';
+import PopupSignup from "../../components/popupSignup/PopupSignup.js";
 
 const Signup = () => {
 
@@ -9,8 +10,8 @@ const Signup = () => {
     const [confirmPasswordIsValid, setConfirmPasswordIsValid] = useState(false);
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
-    const [errorCode, setErrorCode] = useState(null);
     const [message, setMessage] = useState(null);
+    const [isValid, setIsValid] = useState(false);
 
     // let email;
     // let password;
@@ -70,6 +71,7 @@ const Signup = () => {
             const newUser = await fetchSignup(email, password);
 
             if (newUser.status === 200) {
+                setIsValid(true);
                 setMessage("El registro se realizó correctamente");
             }
             else if (newUser.status === 409) {
@@ -83,30 +85,16 @@ const Signup = () => {
             // console.log("Signup handler is working");
         } else {
             setMessage("El formulario no está cumplimentado correctamente");
-
-            // alert("Algo falla: descibir errores");
         }
-
-        // Validar las password (y el email si es necesario)
-
-        // si OK, hacer el fetch al endpoint de registro.
-
-        // const res = await fetchSignup(email, password);
-        // Manejar los mensajes de error
     }
 
-    // switch (errorCode) {
-    //     case null:
-    //         message = "Formulario inicial";
-    //         break;
-
-    // }
 
     return (
 
         <div className="app-body">
             <div className="signup-form-box">
 
+                {isValid && <PopupSignup></PopupSignup>}
                 <form onSubmit={signupHandler} className="signup-form">
                     <h2 className="text-h2">¡Regístrate y empieza a disfrutar!</h2>
 

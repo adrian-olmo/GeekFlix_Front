@@ -7,16 +7,18 @@ import CardMovie from './components/cardMovie/CardMovie';
 import Signup from './containers/signup/Signup';
 import { Carousel } from './components/carousel/Carousel';
 import DisplayMovies from './containers/displayMovies/DisplayMovies';
+import PopupSignup from './components/popupSignup/PopupSignup';
 
 function App() {
   return (
     <div className="bg">
       <Header />
-      {/* <Signup /> */}
+      <Signup />
+      {/* <PopupSignup></PopupSignup> */}
       {/* <CardMovie></CardMovie> */}
       {/* <Carousel /> */}
       {/* <Login /> */}
-      <Signup></Signup>
+      {/* <Signup></Signup> */}
       {/* <DisplayMovies></DisplayMovies> */}
       {/* <Login></Login> */}
       {/* <CardMovie></CardMovie> */}
