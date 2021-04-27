@@ -12,6 +12,7 @@ const CardMovie = (props) => {
                     <img src={props.posterPath}></img>
                     {/* <img src="https://image.tmdb.org/t/p/w500/rkuvJnamPl3xW9wKJsIS6qkmOCW.jpg"></img> */}
                 </div>
+
                 <p>{props.title}</p>
                 <p>{props.genre}</p>
 

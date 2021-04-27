@@ -37,6 +37,7 @@ const DisplayMovies = () => {
                     {movies.map(movie => <CardMovie key={movies.indexOf(movie)}
                         id={movie.id}
                         title={movie.title}
+                        year={movie.year}
                         posterPath={movie.poster_path}
                         genre={movie.Genre.name}></CardMovie>)}
                 </div>}
