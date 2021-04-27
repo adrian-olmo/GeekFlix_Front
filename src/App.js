@@ -14,11 +14,11 @@ function App() {
       <Header />
       {/* <Signup /> */}
       {/* <CardMovie></CardMovie> */}
-      <Carousel />
+      {/* <Carousel /> */}
       {/* <Login /> */}
-      {/* <Signup></Signup> */}
-      <DisplayMovies></DisplayMovies>
-      <Login></Login>
+      <Signup></Signup>
+      {/* <DisplayMovies></DisplayMovies> */}
+      {/* <Login></Login> */}
       {/* <CardMovie></CardMovie> */}
       {/* <Signup></Signup> */}
       {/* <Login></Login> */}

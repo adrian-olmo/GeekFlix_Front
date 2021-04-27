@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import fetchSignup from '../../services/fetchSignup.js'
 import "./Signup.css";
+import Message from '../../components/message/Message.js';
 
 const Signup = () => {
 
@@ -8,6 +9,8 @@ const Signup = () => {
     const [confirmPasswordIsValid, setConfirmPasswordIsValid] = useState(false);
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
+    const [errorCode, setErrorCode] = useState(null);
+    const [message, setMessage] = useState(null);
 
     // let email;
     // let password;
@@ -28,10 +31,12 @@ const Signup = () => {
 
     const getPasswordChange = (event) => {
         if (event.target.value.length < 4) {
-            console.log("La contraseña no es válida");
+            setMessage("La contraseña debe tener al menos 4 caracteres");
+            // console.log("La contraseña no es válida");
             setPasswordIsValid(false);
         } else {
             setPassword(event.target.value);
+            setMessage("");
             // password = event.target.value;
             setPasswordIsValid(true);
         }
@@ -45,11 +50,13 @@ const Signup = () => {
         console.log(`${password} -- ${confirmedPassword}`);
 
         if (confirmedPassword === password) {
-            console.log("Las contraseñas coinciden");
+            // console.log("Las contraseñas coinciden");
             setConfirmPasswordIsValid(true);
+            setMessage("");
         } else {
             setConfirmPasswordIsValid(false);
-            console.log("Las contraseñas no coinciden");
+            setMessage("Las contraseñas no coinciden");
+            // console.log("Las contraseñas no coinciden");
         }
         console.log(event.target.value);
     }
@@ -61,13 +68,24 @@ const Signup = () => {
             console.log(email, password);
 
             const newUser = await fetchSignup(email, password);
+
+            if (newUser.status === 200) {
+                setMessage("El registro se realizó correctamente");
+            }
+            else if (newUser.status === 409) {
+                setMessage("El email ya está registrado");
+            }
+            else {
+                setMessage("Algo fue mal durante el registro");
+            }
+            // Lanzar un pop up con resgistro satisfactorio
             // alert("Registro realizado correctamente");
             // console.log("Signup handler is working");
         } else {
-            alert("Algo falla: descibir errores");
+            setMessage("El formulario no está cumplimentado correctamente");
+
+            // alert("Algo falla: descibir errores");
         }
-
-
 
         // Validar las password (y el email si es necesario)
 
@@ -76,6 +94,13 @@ const Signup = () => {
         // const res = await fetchSignup(email, password);
         // Manejar los mensajes de error
     }
+
+    // switch (errorCode) {
+    //     case null:
+    //         message = "Formulario inicial";
+    //         break;
+
+    // }
 
     return (
 
@@ -95,6 +120,8 @@ const Signup = () => {
                         onInput={e => getConfirmPasswordChange(e)}></input>
 
                     <button className="button signup-button" type="submit">Signup</button>
+
+                    <Message msg={message}></Message>
 
                 </form>
             </div>
