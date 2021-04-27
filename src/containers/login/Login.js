@@ -45,6 +45,7 @@ const Login = () => {
 
     }
 
+    //Pendiente incluir redireccion a Home
     return (
         <div className="app-body">
             {validation && <PopupSignup />}
