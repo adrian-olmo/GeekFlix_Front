@@ -1,0 +1,51 @@
+.card {
+  position: relative;
+  overflow: hidden;
+  width: 60%;
+  height: 60%;
+  margin: 50px auto;
+  background: #2a264f;
+  border: 5px solid #1a163f;
+  border-radius: 3px;
+  box-shadow: 0 0 10px #2a264f;
+}
+
+.image {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 60%;
+  width: 100%;
+  background-image: url(http://cima4u.tv/wp-content/uploads/1-71.jpg);
+  background-size: 310px 440px;
+  background-position: left top;
+  transition: all 0.5s ease-in-out;
+}
+
+.title {
+  height: 22%;
+  width: 100%;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 700;
+  color: #fffc;
+  padding: 15px 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 -95px 28px -25px #000 inset;
+}
+
+.desc {
+  height: 22%;
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
+  font-weight: 700;
+  color: #fffc;
+  padding: 15px 9px;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 -95px 28px -25px #000 inset;
+}
