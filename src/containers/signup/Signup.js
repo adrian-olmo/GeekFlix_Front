@@ -92,9 +92,10 @@ const Signup = () => {
     return (
 
         <div className="app-body">
-            <div className="signup-form-box">
 
-                {isValid && <PopupSignup></PopupSignup>}
+            {isValid && <PopupSignup></PopupSignup>}
+
+            {!isValid && <div className="signup-form-box">
                 <form onSubmit={signupHandler} className="signup-form">
                     <h2 className="text-h2">¡Regístrate y empieza a disfrutar!</h2>
 
@@ -112,7 +113,8 @@ const Signup = () => {
                     <Message msg={message}></Message>
 
                 </form>
-            </div>
+            </div>}
+
         </div>
 
     )

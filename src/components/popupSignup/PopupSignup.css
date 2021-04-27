@@ -11,10 +11,12 @@
   padding-right: 1rem;
   margin: auto;
   border-radius: 1rem;
+  border: 1px solid black;
+  z-index: 99;
 
   /* provisional */
-  /* margin-top: 15rem;
-  margin-bottom: 15rem; */
+  margin-top: 15rem;
+  margin-bottom: 15rem;
 }
 
 .popup-text {
