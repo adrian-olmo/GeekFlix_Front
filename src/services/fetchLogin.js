@@ -1,11 +1,8 @@
 export const fetchLogin = async (email, password) => {
     try {
-        console.log(`Datos recibidos: ${email} y ${password}`);
-        console.log('Consultando datos');
-
         const urlLogin = 'http://localhost:5000/login';
+        let result = await fetch(urlLogin, {
 
-        const result = await fetch(urlLogin, {
             method: 'GET',
             headers: {
                 email: email,
@@ -13,10 +10,11 @@ export const fetchLogin = async (email, password) => {
             }
         });
 
-        return result;
+        let res = await result.json()
+        return res;
 
     } catch (error) {
-
+        console.log(error.message);
     }
 
 }

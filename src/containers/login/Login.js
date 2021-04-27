@@ -1,11 +1,15 @@
 import { useEffect, useRef, useState } from "react"
 import "./Login.css"
 import { fetchLogin } from "../../services/fetchLogin.js";
+import PopupSignup from "../../components/popupSignup/PopupSignup";
+import Message from "../../components/message/Message";
 
 const Login = () => {
 
-    let [email, setEmail] = useState("")
-    let [password, setPassword] = useState("")
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const [message, setMessage] = useState(null)
+    const [validation, setValidation] = useState(false)
 
     let inputLogin = useRef(null);
 
@@ -23,22 +27,30 @@ const Login = () => {
 
     const loginHandler = async (e) => {
         e.preventDefault();
-        console.log(email, password);
         if (email && password) {
-            console.log(email, password);
             const loginUser = await fetchLogin(email, password);
+            //Almacena el token
+            localStorage.setItem('auth', JSON.stringify(loginUser.token))
+
+            if (loginUser.token) {
+                setValidation(true)
+                setMessage('Iniciando Sesion');
+            } else {
+                setMessage('El email o contraseñas son incorrectos')
+            }
 
         } else {
-            alert('Algo salio mal')
+            setMessage('Algo no salio como se esperaba')
         }
 
     }
 
     return (
+        <div className="app-body">
+            {validation && <PopupSignup />}
 
-        <>
 
-            <div className='login-form-container'>
+            {!validation && <div className='login-form-container'>
                 <form className='login-box' onSubmit={loginHandler}>
                     <h2 className='text-h2'>Bienvenido a GeekFlix</h2>
 
@@ -50,13 +62,14 @@ const Login = () => {
 
                     <button className='button login-button' type='submit'>Login</button>
 
+                    <Message msg={message} />
+
                 </form>
-            </div>
 
-        </>
+            </div>}
 
+        </div>
     )
-
 }
 
 export default Login;

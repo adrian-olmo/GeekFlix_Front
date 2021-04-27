@@ -13,14 +13,14 @@ function App() {
   return (
     <div className="bg">
       <Header />
-      <Signup />
+      {/* <Signup /> */}
       {/* <PopupSignup></PopupSignup> */}
       {/* <CardMovie></CardMovie> */}
       {/* <Carousel /> */}
       {/* <Login /> */}
       {/* <Signup></Signup> */}
       {/* <DisplayMovies></DisplayMovies> */}
-      {/* <Login></Login> */}
+      <Login />
       {/* <CardMovie></CardMovie> */}
       {/* <Signup></Signup> */}
       {/* <Login></Login> */}
