@@ -15,7 +15,6 @@ function App() {
   return (
     <div className="bg">
       <Header />
-      <CardOrder></CardOrder>
       <CardUser></CardUser>
       {/* <Signup /> */}
       {/* <PopupSignup></PopupSignup> */}

@@ -36,7 +36,7 @@ const CardUser = () => {
         <div className="app-body">
             <div className="display-orders">
                 <h2 className="titulo"><strong>Tus pedidos</strong></h2>
-                {orders.map(order => <CardOrder key={orders.indexOf(order)} title={order.title} start={order.orderStart} end={order.orderEnd}></CardOrder>)}
+                {orders.map(order => <CardOrder key={orders.indexOf(order)} title={order.title} start={order.orderStart} end={order.orderEnd} poster={order.poster}></CardOrder>)}
             </div>
         </div>
 

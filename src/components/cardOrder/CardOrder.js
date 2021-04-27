@@ -7,8 +7,8 @@ const CardOrder = (props) => {
         <div className="card-order-box">
 
             <div className="card-order">
-                <div>POSTER
-                    <img></img>
+                <div className="poster">
+                    <img src={props.poster}></img>
                 </div>
                 <div>{props.title}</div>
                 <div>{props.start}</div>
