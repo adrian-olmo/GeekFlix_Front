@@ -5,9 +5,9 @@ export const getUserOrders = async () => {
         // Recogemos el token del localStorage
         // const userDataLocal = localStorage.getItem('');
 
-        // Provisional:
+        // Provisional con token hardcodeada para comprobar que funciona.
         const userDataLocal = {
-            token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkcmlAZ21haWwuY29tIiwiaWQiOjIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjE5NTQyNjE5fQ.WjnsZkTYQDn91LThK07BouuBWm9PfEE528guTKWXQ4Y", password: "1234"
+            token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkcmlAZ21haWwuY29tIiwiaWQiOjIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjE5NTQyNjE5fQ.WjnsZkTYQDn91LThK07BouuBWm9PfEE528guTKWXQ4Y"
         }
 
         // Hacemos la petición al back

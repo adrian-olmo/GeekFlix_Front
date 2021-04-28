@@ -19,12 +19,6 @@ const CardUser = () => {
             // const { rows } = json;
             console.log(json);
             setOrders(json);
-            // console.log(rows);
-
-            // const rows = json.length;
-            // if (rows) {
-            //     setOrders(rows)
-            // }
 
         } catch (error) {
             console.log(error);
@@ -34,8 +28,16 @@ const CardUser = () => {
     return (
 
         <div className="app-body">
+
+
             <div className="display-orders">
                 <h2 className="titulo"><strong>Tus pedidos</strong></h2>
+                <div className="field-name">
+                    <div></div>
+                    <div>Titulo</div>
+                    <div>Inicio alquiler</div>
+                    <div>Final alquiler</div>
+                </div>
                 {orders.map(order => <CardOrder key={orders.indexOf(order)} title={order.title} start={order.orderStart} end={order.orderEnd} poster={order.poster}></CardOrder>)}
             </div>
         </div>

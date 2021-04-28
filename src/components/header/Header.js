@@ -29,7 +29,7 @@ export class Header extends React.Component {
                     <nav className='navbar'>
                         <button className="button header-button">Registrarse</button>
                         <button className="button header-button">Iniciar sesión</button>
-                        <button className="button header-button">Cerrar sesión</button>
+                        {/* <button className="button header-button">Cerrar sesión</button> */}
                     </nav>
                 </div>
 
