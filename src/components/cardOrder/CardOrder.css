@@ -11,10 +11,11 @@
 }
 
 .card-order {
-  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .poster {
