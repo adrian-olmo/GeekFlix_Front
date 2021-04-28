@@ -1,19 +1,45 @@
 import "./MovieDetail.css"
 import Kong from "../../img/carousel/kong.jpg"
+import { useEffect, useState } from "react"
+import { getMovieDetail } from "../../services/fetchDetail"
 
-export const MovieDetail = () => {
+export const MovieDetail = (props) => {
+
+    let [detail, setDetail] = useState([])
+
+
+    useEffect(() => {
+        getDetail();
+    }, [])
+
+    const getDetail = async () => {
+        try {
+
+            const result = await getMovieDetail(props.id);
+            let json = await result.json();
+            setDetail(json[0])
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
 
     return (
         <>
             <div className="card">
+
+
                 <div className="image">
-                    <img src={Kong} />
+                    <img src={detail.poster_path} />
                 </div>
-                <div class="title">Godzilla vs Kong</div>
-                <div class="desc">Godzilla y Kong, dos de las fuerzas más poderosas de un planeta habitado por todo tipo de aterradoras criaturas, se enfrentan en un espectacular combate que sacude los cimientos de la humanidad. Monarch (Kyle Chandler) se embarca en una misión de alto riesgo y pone rumbo hacia territorios inexplorados para descubrir los orígenes de estos dos titanes, en un último esfuerzo por tratar de salvar a dos bestias que parecen tener las horas contadas sobre la faz de la Tierra.</div>
+                <div class="title">{detail.title}</div>
+                <div class="desc">{detail.overview}</div>
+                <button className="button button-card">Alquilar</button>
             </div>
+
         </>
+
+
 
     )
 }

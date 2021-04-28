@@ -1,7 +1,14 @@
+import { useState } from "react";
+import { MovieDetail } from "../movieDetail/MovieDetail";
 import "./CardMovie.css";
 
 const CardMovie = (props) => {
 
+    let [pelicula, setPelicula] = useState(null)
+
+    const handlerID = async () => {
+        setPelicula(props.id)
+    }
 
     return (
 
@@ -15,7 +22,10 @@ const CardMovie = (props) => {
                 <p>{props.title}</p>
                 <p>{props.genre}</p>
 
-                <button className="button button-card">Ver más</button>
+                <button onClick={() => handlerID()} className="button button-card">Ver más</button>
+
+                {/* Lo pinta encima */}
+                {pelicula && <MovieDetail id={pelicula} />}
 
             </div>
         </div>

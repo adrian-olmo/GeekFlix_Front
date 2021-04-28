@@ -1,6 +1,5 @@
 import { Component, useEffect, useState } from "react";
 import "./Carousel.css"
-import { fetchImages } from "../../services/fetchImages";
 
 //Images
 import Kong from "../../img/carousel/kong.jpg"
