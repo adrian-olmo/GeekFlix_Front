@@ -28,6 +28,7 @@ function App() {
         {/* <Signup></Signup> */}
         {/* <Login></Login> */}
       </div>
+
       <Footer />
     </>
   );
