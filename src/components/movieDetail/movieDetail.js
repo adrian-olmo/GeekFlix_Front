@@ -1,4 +1,4 @@
-import "./MovieDetail.css"
+import "./movieDetail.css"
 import Kong from "../../img/carousel/kong.jpg"
 import { useEffect, useState } from "react"
 import { getMovieDetail } from "../../services/fetchDetail"

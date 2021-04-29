@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { MovieDetail } from "../movieDetail/MovieDetail";
+import { MovieDetail } from "../movieDetail/movieDetail";
+
 import "./CardMovie.css";
 
 const CardMovie = (props) => {
