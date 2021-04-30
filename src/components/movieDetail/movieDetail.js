@@ -1,5 +1,4 @@
-import "./MovieDetail.css"
-import Kong from "../../img/carousel/kong.jpg"
+import "./movieDetail.css"
 import { useEffect, useState } from "react"
 import { getMovieDetail } from "../../services/fetchDetail"
 import { Link, useParams } from "react-router-dom";

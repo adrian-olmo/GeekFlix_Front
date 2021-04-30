@@ -1,7 +1,6 @@
 import "./CardMovie.css";
 import { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { MovieDetail } from "../movieDetail/MovieDetail";
 
 
 
