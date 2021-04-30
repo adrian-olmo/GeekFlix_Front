@@ -13,17 +13,7 @@ class Header extends React.Component {
         }
     }
 
-    // componentDidMount() {
-
-    //     store
-    //     if (store.getState().token) {
-    //         this.setState({ isLogged: true });
-    //     } else {
-    //         this.setState({ isLogged: false });
-    //     }
-    // }
-
-    componentDidUpdate() {
+    componentDidMount() {
 
         store.subscribe(() => {
             if (store.getState().token) {
