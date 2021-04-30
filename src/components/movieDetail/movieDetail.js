@@ -2,11 +2,14 @@ import "./movieDetail.css"
 import { useEffect, useState } from "react"
 import { getMovieDetail } from "../../services/fetchDetail"
 import { Link, useParams } from "react-router-dom";
+import { newOrder } from "../../services/fetchOrder"
+import store from "../../store/store";
 
 export const MovieDetail = (props) => {
 
     let [detail, setDetail] = useState([])
     let { id } = useParams();
+    let token = store.getState().token;
 
     useEffect(() => {
         getDetail();
@@ -20,6 +23,16 @@ export const MovieDetail = (props) => {
             setDetail(json[0])
         } catch (error) {
             console.log({ error: error });
+        }
+    }
+
+    const handleOrder = async (id, token) => {
+        try {
+            const result = await newOrder(id, token);
+            let json = await result.json();
+            console.log(json);
+        } catch (error) {
+            console.log({ error: error })
         }
     }
 
@@ -61,7 +74,7 @@ export const MovieDetail = (props) => {
                     </div>
 
                     <div className="title-content">
-                        <button className="button button-card">Alquilar</button>
+                        <button onClick={() => handleOrder(id, token)} className="button button-card">Alquilar</button>
                     </div>
 
                     <div className="title-content">

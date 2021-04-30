@@ -1,12 +1,18 @@
+import store from "../../store/store";
 import "./CardOrder.css"
 
 const CardOrder = (props) => {
+
+    const isAdmin = store.getState().isAdmin;
 
     return (
 
         <div className="card-order-box">
 
+
             <div className="card-order">
+                {isAdmin && <div>{props.id}</div>}
+                {isAdmin && <div>{props.email}</div>}
                 <div className="poster">
                     <img src={props.poster}></img>
                 </div>

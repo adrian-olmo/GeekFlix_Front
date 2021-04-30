@@ -1,8 +1,10 @@
 import { createStore } from 'redux';
+import { SET_AS_ADMIN, SET_AS_USER } from './actions/adminActions';
 import { LOGIN_SUCCESS, LOGIN_FAILED } from './actions/logginActions'
 
 const initialState = {
-    token: null
+    token: null,
+    isAdmin: false
 }
 
 const reducer = (currentState = initialState, action) => {
@@ -18,6 +20,20 @@ const reducer = (currentState = initialState, action) => {
         return {
             ...currentState,
             token: null
+        }
+    }
+
+    if (action.type === SET_AS_ADMIN) {
+        return {
+            ...currentState,
+            isAdmin: true
+        }
+    }
+
+    if (action.type === SET_AS_USER) {
+        return {
+            ...currentState,
+            isAdmin: false
         }
     }
 

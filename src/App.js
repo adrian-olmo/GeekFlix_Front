@@ -25,6 +25,7 @@ function App() {
           <Route path="/movie/:id" component={MovieDetail}></Route>
           <Route path="/movies" component={DisplayMovies}></Route>
           <Route path="/displayMovies" component={DisplayMovies}></Route>
+          {/* <Route path="/orders"></Route> */}
         </Switch>
       </div>
 

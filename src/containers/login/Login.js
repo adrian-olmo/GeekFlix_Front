@@ -6,6 +6,7 @@ import Message from "../../components/message/Message";
 import { useHistory } from "react-router-dom"
 import { loginSuccessAction, loginFailedAction } from '../../store/actions/logginActions';
 import store from '../../store/store'
+import { setAsAdminAction, setAsUserAction } from "../../store/actions/adminActions";
 
 const Login = () => {
 
@@ -37,6 +38,8 @@ const Login = () => {
             try {
 
                 const loginUser = await fetchLogin(email, password);
+
+                console.log(loginUser);
                 //Almacena el token               
 
                 if (loginUser.token) {
@@ -47,6 +50,11 @@ const Login = () => {
                     store.dispatch(loginSuccessAction(JSON.stringify(loginUser.token)))
 
                     // Redireccionando a nuestros pedidos
+                    if (loginUser.role === "admin") {
+                        store.dispatch(setAsAdminAction());
+                    } else {
+                        store.dispatch(setAsUserAction());
+                    }
                     history.push('/user');
 
                 } else {
