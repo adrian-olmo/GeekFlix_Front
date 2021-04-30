@@ -3,8 +3,13 @@ import "./Login.css"
 import { fetchLogin } from "../../services/fetchLogin.js";
 import PopupSignup from "../../components/popupSignup/PopupSignup";
 import Message from "../../components/message/Message";
+import { useHistory } from "react-router-dom"
+import { loginSuccessAction, loginFailedAction } from '../../store/actions/logginActions';
+import store from '../../store/store'
 
 const Login = () => {
+
+    let history = useHistory();
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -28,15 +33,29 @@ const Login = () => {
     const loginHandler = async (e) => {
         e.preventDefault();
         if (email && password) {
-            const loginUser = await fetchLogin(email, password);
-            //Almacena el token
-            localStorage.setItem('auth', JSON.stringify(loginUser.token))
 
-            if (loginUser.token) {
-                setValidation(true)
-                setMessage('Iniciando Sesion');
-            } else {
-                setMessage('El email o contraseñas son incorrectos')
+            try {
+
+                const loginUser = await fetchLogin(email, password);
+                //Almacena el token               
+
+                if (loginUser.token) {
+                    setValidation(true)
+                    setMessage('Iniciando Sesion');
+
+                    //localStorage.setItem('auth', JSON.stringify(loginUser.token))
+                    store.dispatch(loginSuccessAction(JSON.stringify(loginUser.token)))
+
+                    // Redireccionando a nuestros pedidos
+                    history.push('/user');
+
+                } else {
+                    setMessage('El email o contraseñas son incorrectos')
+                    store.dispatch(loginFailedAction())
+                }
+
+            } catch (e) {
+                store.dispatch(loginFailedAction())
             }
 
         } else {
@@ -48,8 +67,7 @@ const Login = () => {
     //Pendiente incluir redireccion a Dashboard
     return (
         <div className="app-body">
-            {validation && <PopupSignup />}
-
+            {/* {validation && <PopupSignup />} */}
 
             {!validation && <div className='login-form-container'>
                 <form className='login-box' onSubmit={loginHandler}>
