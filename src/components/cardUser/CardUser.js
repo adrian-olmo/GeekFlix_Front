@@ -37,8 +37,9 @@ const CardUser = () => {
                     <div>Titulo</div>
                     <div>Inicio alquiler</div>
                     <div>Final alquiler</div>
+                    <div>Estado</div>
                 </div>
-                {orders.map(order => <CardOrder key={orders.indexOf(order)} title={order.title} start={order.orderStart.substring(0, 10)} end={order.orderEnd.substring(0, 10)} poster={order.poster}></CardOrder>)}
+                {orders.map(order => <CardOrder key={orders.indexOf(order)} title={order.title} start={order.orderStart.substring(0, 10)} end={order.orderEnd.substring(0, 10)} poster={order.poster} status={order.estado}></CardOrder>)}
             </div>
         </div>
 

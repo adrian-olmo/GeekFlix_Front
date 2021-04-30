@@ -3,8 +3,11 @@ import "./Login.css"
 import { fetchLogin } from "../../services/fetchLogin.js";
 import PopupSignup from "../../components/popupSignup/PopupSignup";
 import Message from "../../components/message/Message";
+import { useHistory } from "react-router-dom"
 
 const Login = () => {
+
+    let history = useHistory();
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -32,9 +35,13 @@ const Login = () => {
             //Almacena el token
             localStorage.setItem('auth', JSON.stringify(loginUser.token))
 
+            // Redireccionando a nuestros pedidos
+            history.push('/user');
+
             if (loginUser.token) {
                 setValidation(true)
                 setMessage('Iniciando Sesion');
+
             } else {
                 setMessage('El email o contraseñas son incorrectos')
             }
@@ -48,8 +55,7 @@ const Login = () => {
     //Pendiente incluir redireccion a Dashboard
     return (
         <div className="app-body">
-            {validation && <PopupSignup />}
-
+            {/* {validation && <PopupSignup />} */}
 
             {!validation && <div className='login-form-container'>
                 <form className='login-box' onSubmit={loginHandler}>

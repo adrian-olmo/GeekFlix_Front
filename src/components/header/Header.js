@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router";
 import './Header.css'
 
-export class Header extends React.Component {
+class Header extends React.Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
     }
 
     //Descomentar al implementar funcionalidad login
@@ -12,29 +13,32 @@ export class Header extends React.Component {
         localStorage.removeItem()
     } */
 
+    goToUrl(url) {
+
+        this.props.history.push(url)
+    }
+
+    logout() {
+        localStorage.removeItem('auth');
+        this.props.history.push('/');
+    }
+
     render() {
 
         return (
-            // <header className='header'>
-            //     <div className='navbar-header'>
-            //         <nav className='navbar'>
-            //             <button className="button header-button">Signup</button>
-            //             <button className="button header-button">Login</button>
-            //         </nav>
-            //     </div>
-            // </header>
 
             <header className='header'>
                 <div className='navbar-header'>
                     <nav className='navbar'>
-                        <button className="button header-button">Registrarse</button>
-                        <button className="button header-button">Iniciar sesión</button>
-                        {/* <button className="button header-button">Cerrar sesión</button> */}
+                        <button onClick={() => this.goToUrl('/signup')} className="button header-button">Registrarse</button>
+                        <button onClick={() => this.goToUrl('/login')} className="button header-button">Iniciar sesión</button>
+                        <button onClick={() => this.logout()} className="button header-button">Cerrar sesión</button>
                     </nav>
                 </div>
 
             </header>
         )
-
     }
 }
+
+export default withRouter(Header);

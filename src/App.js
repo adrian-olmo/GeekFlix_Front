@@ -1,7 +1,7 @@
 import './App.css';
-
+import CardUser from './components/cardUser/CardUser'
 import { Footer } from './components/footer/Footer';
-import { Header } from './components/header/Header';
+import Header from './components/header/Header';
 import Login from './containers/login/Login';
 import CardMovie from './components/cardMovie/CardMovie';
 import Signup from './containers/signup/Signup';
@@ -21,18 +21,12 @@ function App() {
           <Route path="/" component={Carousel} exact></Route>
           <Route path="/signup" component={Signup}></Route>
           <Route path="/login" component={Login}></Route>
-          {/* <Signup /> */}
-          {/* <PopupSignup></PopupSignup> */}
+          <Route path="/user" component={CardUser}></Route>
           {/* <CardMovie></CardMovie> */}
           {/* <Carousel /> */}
-          {/*  <Login /> */}
           {/* <Signup></Signup> */}
-          {/* <DisplayMovies></DisplayMovies> */}
-          {/* <Login /> */}
-          {/* <CardMovie></CardMovie> */}
+          <Route path="/displayMovies" component={DisplayMovies}></Route>
           {/* <MovieDetail /> */}
-          {/* <Signup></Signup> */}
-          {/* <Login></Login> */}
         </Switch>
       </div>
 

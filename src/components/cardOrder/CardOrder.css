@@ -21,9 +21,6 @@
 .poster {
   display: flex;
   flex-direction: column;
-}
-
-.poster > img {
   width: 3rem;
   height: 4rem;
 }
