@@ -1,10 +1,14 @@
 import './PopupSignup.css'
+import { useHistory } from 'react-router-dom';
 
-const PopupSignup = (props) => {
+const PopupSignup = () => {
+
+    let history = useHistory();
 
     const goToLoginHandler = () => {
         // redireccionar a login
         console.log("Redireccionando a login");
+        history.push('/login');
     }
 
     return (
