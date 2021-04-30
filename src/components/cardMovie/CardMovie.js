@@ -21,7 +21,7 @@ const CardMovie = (props) => {
         <div className="card-movie-box">
             <div className="card-movie">
 
-                <div className="poster">
+                <div className="poster-card">
                     <img src={props.posterPath}></img>
                 </div>
                 <p>{props.title}</p>
