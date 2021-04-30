@@ -9,7 +9,7 @@ import { Carousel } from './components/carousel/Carousel';
 import DisplayMovies from './containers/displayMovies/DisplayMovies';
 import PopupSignup from './components/popupSignup/PopupSignup';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { MovieDetail } from './components/movieDetail/movieDetail';
+import { MovieDetail } from './components/movieDetail/MovieDetail';
 
 function App() {
   return (

@@ -1,4 +1,4 @@
-import "./movieDetail.css"
+import "./MovieDetail.css"
 import { useEffect, useState } from "react"
 import { getMovieDetail } from "../../services/fetchDetail"
 import { Link, useParams } from "react-router-dom";
