@@ -1,14 +1,18 @@
 import { useState } from "react";
-import { MovieDetail } from "../movieDetail/movieDetail";
+import { Link, useHistory } from "react-router-dom";
+import { MovieDetail } from "../movieDetail/MovieDetail";
 
 import "./CardMovie.css";
 
 const CardMovie = (props) => {
 
     let [pelicula, setPelicula] = useState(null)
+    let history = useHistory();
 
     const handlerID = async () => {
         setPelicula(props.id)
+        history.push(`/movie/${props.id}`)
+
     }
 
     return (
@@ -18,15 +22,19 @@ const CardMovie = (props) => {
 
                 <div className="poster">
                     <img src={props.posterPath}></img>
-                    {/* <img src="https://image.tmdb.org/t/p/w500/rkuvJnamPl3xW9wKJsIS6qkmOCW.jpg"></img> */}
                 </div>
                 <p>{props.title}</p>
                 <p>{props.genre}</p>
 
+                {/* Redireccion de una manera diferente al history.push(ruta) */}
+                {/* <Link to={`/movie/${props.id}`} >
+                    <button onClick={() => handlerID()} className="button button-card">Ver más</button>
+                </Link> */}
+
+
                 <button onClick={() => handlerID()} className="button button-card">Ver más</button>
 
-                {/* Lo pinta encima */}
-                {pelicula && <MovieDetail id={pelicula} />}
+
 
             </div>
         </div>

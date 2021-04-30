@@ -8,13 +8,14 @@ import Signup from './containers/signup/Signup';
 import { Carousel } from './components/carousel/Carousel';
 import DisplayMovies from './containers/displayMovies/DisplayMovies';
 import PopupSignup from './components/popupSignup/PopupSignup';
-import { MovieDetail } from './components/movieDetail/movieDetail';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { MovieDetail } from './components/movieDetail/MovieDetail';
 
 function App() {
   return (
     <BrowserRouter>
       <div className="bg">
+
         <Header />
         <Switch>
 
@@ -27,10 +28,13 @@ function App() {
           {/* <Carousel /> */}
           {/*  <Login /> */}
           {/* <Signup></Signup> */}
-          {/* <DisplayMovies></DisplayMovies> */}
+
+          <Route path="/movie/:id" component={MovieDetail}></Route>
+          <Route path="/movies" component={DisplayMovies}></Route>
+
           {/* <Login /> */}
           {/* <CardMovie></CardMovie> */}
-          {/* <MovieDetail /> */}
+
           {/* <Signup></Signup> */}
           {/* <Login></Login> */}
         </Switch>

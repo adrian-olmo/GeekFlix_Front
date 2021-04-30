@@ -1,12 +1,15 @@
-import "./movieDetail.css"
+import "./MovieDetail.css"
 import Kong from "../../img/carousel/kong.jpg"
 import { useEffect, useState } from "react"
 import { getMovieDetail } from "../../services/fetchDetail"
+import { Link, useParams } from "react-router-dom";
 
 export const MovieDetail = (props) => {
 
     let [detail, setDetail] = useState([])
+    let { id } = useParams();
 
+    console.log(id, 'ID MOVIE DETAIL')
 
     useEffect(() => {
         getDetail();
@@ -15,11 +18,13 @@ export const MovieDetail = (props) => {
     const getDetail = async () => {
         try {
 
-            const result = await getMovieDetail(4);
+            const result = await getMovieDetail(id);
+            console.log(result);
             let json = await result.json();
+            console.log(json);
             setDetail(json[0])
         } catch (error) {
-            console.log(error);
+            console.log({ error: error });
         }
     }
 
@@ -30,7 +35,7 @@ export const MovieDetail = (props) => {
 
                 <div className="card-image">
                     <div className="poster">
-                        <img src={Kong} />
+                        <img src={detail.poster_path} />
                     </div>
 
                 </div>
@@ -41,7 +46,7 @@ export const MovieDetail = (props) => {
                     </div>
 
                     <div className="title-data">
-                        <p>Kong vs Godzilla </p>
+                        <p>{detail.title} </p>
                     </div>
 
                     <div className="title-content">
@@ -49,7 +54,7 @@ export const MovieDetail = (props) => {
                     </div>
 
                     <div className="title-data">
-                        <p>2021</p>
+                        <p>{detail.year}</p>
                     </div>
 
                     <div className="title-content">
@@ -57,7 +62,7 @@ export const MovieDetail = (props) => {
                     </div>
 
                     <div className="title-data">
-                        <p>Godzilla y Kong, dos de las fuerzas más poderosas de un planeta habitado por todo tipo de aterradoras criaturas, se enfrentan en un espectacular combate que sacude los cimientos de la humanidad. Monarch (Kyle Chandler) se embarca en una misión de alto riesgo y pone rumbo hacia territorios inexplorados para descubrir los orígenes de estos dos titanes, en un último esfuerzo por tratar de salvar a dos bestias que parecen tener las horas contadas sobre la faz de la Tierra.</p>
+                        <p>{detail.overview}</p>
                     </div>
 
                     <div className="title-content">
@@ -65,8 +70,10 @@ export const MovieDetail = (props) => {
                     </div>
 
                     <div className="title-content">
+                        <Link to="/movies">
+                            <button className="button button-card">Volver</button>
+                        </Link>
 
-                        <button className="button button-card">Volver</button>
                     </div>
                 </div>
 
