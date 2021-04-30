@@ -55,6 +55,7 @@ const Login = () => {
                 }
 
             } catch (e) {
+                setMessage('Algo no salio como se esperaba')
                 store.dispatch(loginFailedAction())
             }
 
