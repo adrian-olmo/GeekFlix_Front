@@ -4,6 +4,8 @@ import { fetchLogin } from "../../services/fetchLogin.js";
 import PopupSignup from "../../components/popupSignup/PopupSignup";
 import Message from "../../components/message/Message";
 import { useHistory } from "react-router-dom"
+import { loginSuccessAction, loginFailedAction } from '../../store/actions/logginActions';
+import store from '../../store/store'
 
 const Login = () => {
 
@@ -31,19 +33,29 @@ const Login = () => {
     const loginHandler = async (e) => {
         e.preventDefault();
         if (email && password) {
-            const loginUser = await fetchLogin(email, password);
-            //Almacena el token
-            localStorage.setItem('auth', JSON.stringify(loginUser.token))
 
-            // Redireccionando a nuestros pedidos
-            history.push('/user');
+            try {
 
-            if (loginUser.token) {
-                setValidation(true)
-                setMessage('Iniciando Sesion');
+                const loginUser = await fetchLogin(email, password);
+                //Almacena el token               
 
-            } else {
-                setMessage('El email o contraseñas son incorrectos')
+                if (loginUser.token) {
+                    setValidation(true)
+                    setMessage('Iniciando Sesion');
+
+                    //localStorage.setItem('auth', JSON.stringify(loginUser.token))
+                    store.dispatch(loginSuccessAction(JSON.stringify(loginUser.token)))
+
+                    // Redireccionando a nuestros pedidos
+                    history.push('/user');
+
+                } else {
+                    setMessage('El email o contraseñas son incorrectos')
+                    store.dispatch(loginFailedAction())
+                }
+
+            } catch (e) {
+                store.dispatch(loginFailedAction())
             }
 
         } else {

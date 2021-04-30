@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getUserOrders } from "../../services/fetchDashboard";
 import CardOrder from "../cardOrder/CardOrder";
 import './CardUser.css';
+import store from '../../store/store'
 
 const CardUser = () => {
 
@@ -13,12 +14,18 @@ const CardUser = () => {
 
     const getOrders = async () => {
         try {
+            const token = store.getState().token
+            if (token) {
+                const res = await getUserOrders(token);
+                const json = await res.json();
+                // const { rows } = json;
+                console.log(json);
+                setOrders(json);
 
-            const res = await getUserOrders();
-            const json = await res.json();
-            // const { rows } = json;
-            console.log(json);
-            setOrders(json);
+            } else {
+                // No está logado
+                console.log('User is not logged. TODO: manage')
+            }
 
         } catch (error) {
             console.log(error);
@@ -28,7 +35,6 @@ const CardUser = () => {
     return (
 
         <div className="app-body">
-
 
             <div className="display-orders">
                 <h2 className="titulo"><strong>Tus pedidos</strong></h2>
