@@ -14,7 +14,9 @@ const CardOrder = (props) => {
                 <div>{props.start}</div>
                 <div>{props.end}</div>
                 {props.status == "Caducada" && <div style={{ color: "red" }}>{props.status}</div>}
-                {props.status == "Alquilada" && <div style={{ color: "green" }}>{props.status} <button>Ver ahora</button></div>}
+                {props.status == "Alquilada" && <div style={{ color: "green" }}>{props.status} </div>}
+                {props.status == "Alquilada" && <button className="button button-order">Ver ahora</button>}
+
 
             </div>
 
