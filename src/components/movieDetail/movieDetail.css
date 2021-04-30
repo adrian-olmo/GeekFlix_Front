@@ -17,14 +17,14 @@
   height: 50%;
 }
 
-.poster {
+.poster-detail {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.poster > img {
-  width: 94%;
+.poster-detail > img {
+  width: auto;
 }
 
 .card-data {

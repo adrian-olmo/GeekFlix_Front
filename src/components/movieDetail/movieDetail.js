@@ -9,8 +9,6 @@ export const MovieDetail = (props) => {
     let [detail, setDetail] = useState([])
     let { id } = useParams();
 
-    console.log(id, 'ID MOVIE DETAIL')
-
     useEffect(() => {
         getDetail();
     }, [])
@@ -19,9 +17,7 @@ export const MovieDetail = (props) => {
         try {
 
             const result = await getMovieDetail(id);
-            console.log(result);
             let json = await result.json();
-            console.log(json);
             setDetail(json[0])
         } catch (error) {
             console.log({ error: error });
@@ -34,7 +30,7 @@ export const MovieDetail = (props) => {
             <div className="card">
 
                 <div className="card-image">
-                    <div className="poster">
+                    <div className="poster-detail">
                         <img src={detail.poster_path} />
                     </div>
 

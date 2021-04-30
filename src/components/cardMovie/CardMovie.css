@@ -1,8 +1,8 @@
 .card-movie-box {
   background-color: var(--boxAlpha);
   padding: 2rem;
-  /* max-width: 90%; */
-  /* min-width: 90%; */
+  /* max-width: auto;
+  min-width: auto; */
   max-width: 14rem;
   margin: auto;
   border-radius: 1rem;
@@ -19,6 +19,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: auto;
+  height: auto;
 }
 
 .poster > img {
