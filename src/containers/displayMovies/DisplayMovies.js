@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import CardMovie from '../../components/cardMovie/CardMovie';
 import getAllMovies from '../../services/fetchMovies';
+import store from '../../store/store';
 import './DisplayMovies.css';
+import { useHistory } from "react-router-dom";
+
 
 const DisplayMovies = () => {
 
     const [movies, setMovies] = useState(null);
-    // const [results, setResults] = useState(null);
+    const isAdmin = store.getState().isAdmin;
+    const token = store.getState().token;
+    let history = useHistory();
 
     useEffect(() => {
         getMovies();
@@ -27,10 +32,21 @@ const DisplayMovies = () => {
         }
     }
 
+    const goToOrders = () => {
+        history.push('/user')
+    }
+
+    const goToUserOrders = () => {
+        history.push('/user')
+    }
+
     return (
 
         <div className="app-body">
+
             <div className="display-movies">
+                {isAdmin && <button className="button button-users-orders" onClick={() => goToOrders()}>Ver pedidos</button>}
+                {token && <button className="button button-user-order" onClick={() => goToUserOrders()}>Mis pedidos</button>}
                 <h2><strong>Películas disponibles</strong></h2>
                 {movies && <div className="display-movies-grid">
 

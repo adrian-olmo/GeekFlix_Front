@@ -1,7 +1,7 @@
 .card-order-box {
   background-color: var(--boxAlpha);
   max-width: 90%;
-  height: 18rem;
+  height: 20rem;
   margin: auto;
   display: flex;
   flex-direction: row;

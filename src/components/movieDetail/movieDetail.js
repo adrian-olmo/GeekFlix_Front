@@ -17,7 +17,6 @@ export const MovieDetail = (props) => {
 
     const getDetail = async () => {
         try {
-
             const result = await getMovieDetail(id);
             let json = await result.json();
             setDetail(json[0])
@@ -88,8 +87,6 @@ export const MovieDetail = (props) => {
 
             </div>
         </>
-
-
 
     )
 }

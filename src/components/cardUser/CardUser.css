@@ -2,9 +2,9 @@
   color: white;
 }
 
-.titulo {
+/* .titulo {
   text-align: center;
-}
+} */
 
 .field-names {
   display: none;
@@ -26,4 +26,16 @@
 
 .no-color-text {
   color: transparent;
+}
+
+.orders-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button-catalogue {
+  height: 2rem;
+  width: 6rem;
+  border-radius: 0.2rem;
 }
