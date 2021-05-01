@@ -6,7 +6,7 @@ import store from '../../store/store'
 import { getAllOrders } from "../../services/fetchAdminDashboard";
 import { useHistory } from "react-router-dom";
 
-const CardUser = () => {
+export const CardUser = () => {
 
     const [orders, setOrders] = useState([]);
     let history = useHistory();
@@ -23,14 +23,11 @@ const CardUser = () => {
             if (token && isAdmin) {
                 const res = await getAllOrders(token);
                 const json = await res.json();
-                console.log(json);
                 setOrders(json);
             }
             else if (token) {
                 const res = await getUserOrders(token);
                 const json = await res.json();
-                // const { rows } = json;
-                console.log(json);
                 setOrders(json);
 
             } else {
@@ -70,5 +67,3 @@ const CardUser = () => {
 
     )
 }
-
-export default CardUser;

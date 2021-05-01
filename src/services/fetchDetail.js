@@ -1,8 +1,6 @@
 export const getMovieDetail = async (id) => {
 
     try {
-        console.log(id);
-
         const urlDetail = `http://localhost:5000/movies/${id}`
         const resultDetail = await fetch(urlDetail, {
             method: 'GET',
@@ -12,7 +10,6 @@ export const getMovieDetail = async (id) => {
             }
         });
 
-        console.log(resultDetail);
         return resultDetail
 
     } catch (error) {

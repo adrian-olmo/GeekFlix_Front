@@ -8,7 +8,7 @@ import { loginSuccessAction, loginFailedAction } from '../../store/actions/loggi
 import store from '../../store/store'
 import { setAsAdminAction, setAsUserAction } from "../../store/actions/adminActions";
 
-const Login = () => {
+export const Login = () => {
 
     let history = useHistory();
 
@@ -45,8 +45,6 @@ const Login = () => {
                 if (loginUser.token) {
                     setValidation(true)
                     setMessage('Iniciando Sesion');
-
-                    //localStorage.setItem('auth', JSON.stringify(loginUser.token))
                     store.dispatch(loginSuccessAction(JSON.stringify(loginUser.token)))
 
                     // Redireccionando a nuestros pedidos
@@ -99,5 +97,3 @@ const Login = () => {
         </div>
     )
 }
-
-export default Login;

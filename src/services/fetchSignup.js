@@ -8,7 +8,7 @@ const fetchSignup = async (email, password) => {
 
         const object = await fetch(urlSignup, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' }, // I don't know why, but this line is neccessary when we add body
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ 'email': email, 'password': password })
         });
 

@@ -1,8 +1,6 @@
 .card-movie-box {
   background-color: var(--boxAlpha);
   padding: 2rem;
-  /* max-width: auto;
-  min-width: auto; */
   max-width: 14rem;
   margin: auto;
   border-radius: 1rem;

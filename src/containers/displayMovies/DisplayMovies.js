@@ -6,7 +6,7 @@ import './DisplayMovies.css';
 import { useHistory } from "react-router-dom";
 
 
-const DisplayMovies = () => {
+export const DisplayMovies = () => {
 
     const [movies, setMovies] = useState(null);
     const isAdmin = store.getState().isAdmin;
@@ -61,5 +61,3 @@ const DisplayMovies = () => {
         </div>
     )
 }
-
-export default DisplayMovies;

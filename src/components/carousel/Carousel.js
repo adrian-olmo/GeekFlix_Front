@@ -1,4 +1,3 @@
-import { Component, useEffect, useState } from "react";
 import "./Carousel.css"
 
 //Images

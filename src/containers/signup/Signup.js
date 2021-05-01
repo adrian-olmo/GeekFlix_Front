@@ -4,7 +4,7 @@ import "./Signup.css";
 import Message from '../../components/message/Message.js';
 import PopupSignup from "../../components/popupSignup/PopupSignup.js";
 
-const Signup = () => {
+export const Signup = () => {
 
     const [passwordIsValid, setPasswordIsValid] = useState(false);
     const [confirmPasswordIsValid, setConfirmPasswordIsValid] = useState(false);
@@ -13,8 +13,6 @@ const Signup = () => {
     const [message, setMessage] = useState(null);
     const [isValid, setIsValid] = useState(false);
 
-    // let email;
-    // let password;
     let confirmedPassword;
 
     // Using a ref in a functional component:
@@ -119,5 +117,3 @@ const Signup = () => {
 
     )
 }
-
-export default Signup;

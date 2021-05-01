@@ -26,12 +26,6 @@ const CardMovie = (props) => {
                 <p>{props.title}</p>
                 <p>{props.genre}</p>
 
-                {/* Redireccion de una manera diferente al history.push(ruta) */}
-                {/* <Link to={`/movie/${props.id}`} >
-                    <button onClick={() => handlerID()} className="button button-card">Ver más</button>
-                </Link> */}
-
-
                 <button onClick={() => handlerID()} className="button button-card">Ver más</button>
 
 

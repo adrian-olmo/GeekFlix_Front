@@ -4,9 +4,9 @@ import { getMovieDetail } from "../../services/fetchDetail"
 import { Link, useParams } from "react-router-dom";
 import { newOrder } from "../../services/fetchOrder"
 import store from "../../store/store";
-import PopupOrder from "../../components/popupOrder/PopupOrder.js";
+import PopupOrder from "../popupOrder/PopupOrder.js";
 
-export const MovieDetail = (props) => {
+export const MovieDetail = () => {
 
     let [detail, setDetail] = useState([])
     let [orderSuccess, setOrderSuccess] = useState(false);
