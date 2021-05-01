@@ -17,4 +17,27 @@ Aplicación que permite a los usuarios alquilar diferentes películas, desarroll
  - En una nueva pestaña del buscador se abrirá automaticamente http://localhost:3000/
 #
 
-### Estructura de Carpetas
+### Estructura:
+               ├───public
+               └───src
+                ├───components
+                │   ├───cardMovie
+                │   ├───cardOrder
+                │   ├───cardUser
+                │   ├───carousel
+                │   ├───footer
+                │   ├───header
+                │   ├───message
+                │   ├───movieDetail
+                │   ├───popupOrder
+                │   ├───popupSingup
+                ├───containers
+                │   ├───displayMovies
+                │   ├───login
+                │   └───singup
+                ├───img
+                │   ├───carousel
+                └───services
+                ├───store
+                │   ├───actions
+
