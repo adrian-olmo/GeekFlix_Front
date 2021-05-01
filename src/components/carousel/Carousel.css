@@ -1,3 +1,9 @@
+.title-text {
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+}
+
 .container-all {
   position: relative;
   margin-top: auto;

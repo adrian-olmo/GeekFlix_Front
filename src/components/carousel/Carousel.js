@@ -16,62 +16,63 @@ import Soul from "../../img/carousel/soul.jpg"
 
 export function Carousel() {
 
-
-
     return (
-        <div class="container-all">
-            <div class="slide">
+        <>
+            <h2 className="title-text">Novedades</h2>
+            <div class="container-all">
+                <div class="slide">
 
-                <div class="item-slide">
-                    <img src={Kong} />
-                </div>
+                    <div class="item-slide">
+                        <img src={Kong} />
+                    </div>
 
-                <div class="item-slide">
-                    <img src={BadBoys} />
-                </div>
+                    <div class="item-slide">
+                        <img src={BadBoys} />
+                    </div>
 
-                <div class="item-slide">
-                    <img src={RoboSiglo} />
-                </div>
+                    <div class="item-slide">
+                        <img src={RoboSiglo} />
+                    </div>
 
-                <div class="item-slide">
-                    <img src={WonderWoman} />
-                </div>
+                    <div class="item-slide">
+                        <img src={WonderWoman} />
+                    </div>
 
-                <div class="item-slide">
-                    <img src={Scooby} />
-                </div>
+                    <div class="item-slide">
+                        <img src={Scooby} />
+                    </div>
 
-                <div class="item-slide">
-                    <img src={Wick} />
-                </div>
+                    <div class="item-slide">
+                        <img src={Wick} />
+                    </div>
 
-                <div class="item-slide">
-                    <img src={MK} />
-                </div>
-                <div class="item-slide">
-                    <img src={Vengadores} />
-                </div>
+                    <div class="item-slide">
+                        <img src={MK} />
+                    </div>
+                    <div class="item-slide">
+                        <img src={Vengadores} />
+                    </div>
 
-                <div class="item-slide">
-                    <img src={Doorman} />
-                </div>
+                    <div class="item-slide">
+                        <img src={Doorman} />
+                    </div>
 
-                <div class="item-slide">
-                    <img src={Skyline} />
-                </div>
+                    <div class="item-slide">
+                        <img src={Skyline} />
+                    </div>
 
-                <div class="item-slide">
-                    <img src={Agencia} />
-                </div>
+                    <div class="item-slide">
+                        <img src={Agencia} />
+                    </div>
 
-                <div class="item-slide">
-                    <img src={Soul} />
+                    <div class="item-slide">
+                        <img src={Soul} />
+                    </div>
+
                 </div>
 
             </div>
-
-        </div>
+        </>
     )
 
 }
