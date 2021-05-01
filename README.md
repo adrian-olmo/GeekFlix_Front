@@ -41,6 +41,7 @@ Aplicación que permite a los usuarios alquilar diferentes películas, desarroll
                 └───services
                 ├───store
                 │   ├───actions
+#
 
  ### Demo: (Añadir multimedia)
   - Página principal:
@@ -48,6 +49,7 @@ Aplicación que permite a los usuarios alquilar diferentes películas, desarroll
   - Registro:
   - Listado Peliculas + Detalle:
   - Pedidos (usuario y admin)
+#
  
   ## Autores
 
