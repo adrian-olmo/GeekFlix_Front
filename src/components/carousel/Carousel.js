@@ -18,7 +18,7 @@ export function Carousel() {
 
     return (
         <>
-            <h2 className="title-text">Novedades</h2>
+            <h2 className="title-text"><strong className="titulos">Novedades</strong></h2>
             <div class="container-all">
                 <div class="slide">
 
