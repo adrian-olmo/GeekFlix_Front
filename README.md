@@ -41,3 +41,15 @@ Aplicación que permite a los usuarios alquilar diferentes películas, desarroll
                 ├───store
                 │   ├───actions
 
+ ### Demo: (Añadir multimedia)
+  - Página principal:
+  - Login:
+  - Registro:
+  - Listado Peliculas + Detalle:
+  - Pedidos (usuario y admin)
+ 
+  ## Autores
+
+[Rubén Fernández](https://www.linkedin.com/in/rubenfernandezsantos/)
+
+[Adrián Olmo](https://www.linkedin.com/in/adrian-olmo/)
