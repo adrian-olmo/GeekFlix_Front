@@ -14,7 +14,7 @@ import { CardUser } from './components/cardUser/CardUser'
 import { Footer } from './components/footer/Footer';
 import Header from './components/header/Header';
 import { Carousel } from './components/carousel/Carousel';
-import { MovieDetail } from './components/movieDetail/movieDetail';
+import { MovieDetail } from './components/movieDetail/MovieDetail';
 
 function App() {
   return (
