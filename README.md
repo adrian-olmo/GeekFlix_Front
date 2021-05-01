@@ -2,8 +2,9 @@
 - [Introduccion](#Introduccion)
 - [Ejecucion](#Ejecución)
 - [Estructura de Carpetas](#Estructura)
-- [Ejecución](#Endpoints)
-- [Autores](#Authors)
+- [Ejecución](#Ejecucion)
+- [Demo](#Demo)
+- [Autores](#Autores)
 #
 
 
