@@ -50,7 +50,7 @@ export const CardUser = () => {
             <div className="display-orders">
                 <div className="orders-header">
                     <button className="button button-catalogue" onClick={() => goToMovies()}>Ver catálogo</button>
-                    <h2 className="titulo"><strong>Tus pedidos</strong></h2>
+                    <h2 className="titulo"><strong className="titulos">Tus pedidos</strong></h2>
                 </div>
                 <div className="field-names">
 

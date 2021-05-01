@@ -46,7 +46,7 @@ export const DisplayMovies = () => {
 
             <div className="display-movies">
                 {token && <button className="button button-user-order" onClick={() => goToUserOrders()}>Mis pedidos</button>}
-                <h2><strong>Películas disponibles</strong></h2>
+                <h2><strong className="titulos">Películas disponibles</strong></h2>
                 {movies && <div className="display-movies-grid">
 
                     {movies.map(movie => <CardMovie key={movies.indexOf(movie)}
