@@ -1,13 +1,16 @@
 import './PopupOrder.css'
 import { useHistory } from 'react-router-dom';
 
-const PopupOrder = () => {
+const PopupOrder = (props) => {
 
     let history = useHistory();
 
-    const goToOrders = () => {
-
-        history.push('/user');
+    const goToOrders = (redirection) => {
+        if (redirection) {
+            history.push('/user');
+        } else {
+            history.push('/displayMovies');
+        }
     }
 
     return (
@@ -15,8 +18,8 @@ const PopupOrder = () => {
         <div className="app-body">
 
             <div className="popup-order">
-                <div className="popup-text">Pedido realizado correctamente</div>
-                <button onClick={() => { goToOrders() }} className="button popup-button">Aceptar</button>
+                <div className="popup-text">{props.message}</div>
+                <button onClick={() => { goToOrders(props.status) }} className="button popup-button">Aceptar</button>
                 {/* Hay que agregar un onClick que nos redirija a la página de login */}
                 {/* onClick={} */}
             </div>
