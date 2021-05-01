@@ -1,24 +1,42 @@
-import logo from './logo.svg';
+//Styles
 import './App.css';
+
+//Routes
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
+//Containers
+import { Login } from './containers/login/Login';
+import { Signup } from './containers/signup/Signup';
+import { DisplayMovies } from './containers/displayMovies/DisplayMovies';
+
+//Components
+import { CardUser } from './components/cardUser/CardUser'
+import { Footer } from './components/footer/Footer';
+import Header from './components/header/Header';
+import { Carousel } from './components/carousel/Carousel';
+import { MovieDetail } from './components/movieDetail/MovieDetail';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="bg">
+
+        <Header />
+        <Switch>
+
+          <Route path="/" component={Carousel} exact />
+          <Route path="/signup" component={Signup} />
+          <Route path="/login" component={Login} />
+          <Route path="/user" component={CardUser} />
+          <Route path="/movie/:id" component={MovieDetail} />
+          <Route path="/displayMovies" component={DisplayMovies} />
+          {/* <Route path="/orders"></Route> */}
+
+        </Switch>
+      </div>
+
+      <Footer />
+    </BrowserRouter >
   );
 }
 
