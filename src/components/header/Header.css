@@ -33,7 +33,6 @@
   transition: 0.2s;
 }
 
-/* Navbar buttons */
 .header-button {
   width: 8rem;
   height: 2.4rem;
@@ -47,7 +46,6 @@
   transition: 0.3s;
 }
 
-/* Media Queries */
 @media (min-width: 720px) {
   .navbar-header {
     position: fixed;

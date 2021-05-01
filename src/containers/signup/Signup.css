@@ -1,13 +1,6 @@
-/* --light1: #6c939f;
-  --light2: #38616d;
-  --medium: #004256;
-  --dark1: #002631;
-  --dark2: #000000; */
-
 .signup-form-box {
   background-color: var(--boxAlpha);
   padding: 2rem;
-  /* max-width: 90%; */
   max-width: 30rem;
   margin: auto;
   border-radius: 1rem;

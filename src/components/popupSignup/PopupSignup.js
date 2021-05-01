@@ -6,7 +6,6 @@ const PopupSignup = () => {
     let history = useHistory();
 
     const goToLoginHandler = () => {
-        // redireccionar a login
         console.log("Redireccionando a login");
         history.push('/login');
     }
@@ -18,8 +17,6 @@ const PopupSignup = () => {
             <div className="popup-signup">
                 <div className="popup-text">Se ha registrado correctamente</div>
                 <button onClick={() => { goToLoginHandler() }} className="button popup-button">Aceptar</button>
-                {/* Hay que agregar un onClick que nos redirija a la página de login */}
-                {/* onClick={} */}
             </div>
 
         </div>

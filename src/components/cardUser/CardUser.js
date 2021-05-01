@@ -31,7 +31,6 @@ export const CardUser = () => {
                 setOrders(json);
 
             } else {
-                // No está logado
                 console.log('User is not logged. TODO: manage')
             }
 

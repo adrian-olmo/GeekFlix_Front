@@ -45,7 +45,6 @@ export const DisplayMovies = () => {
         <div className="app-body">
 
             <div className="display-movies">
-                {/* {isAdmin && <button className="button button-users-orders" onClick={() => goToOrders()}>Ver pedidos</button>} */}
                 {token && <button className="button button-user-order" onClick={() => goToUserOrders()}>Mis pedidos</button>}
                 <h2><strong>Películas disponibles</strong></h2>
                 {movies && <div className="display-movies-grid">

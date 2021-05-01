@@ -24,19 +24,16 @@ export const Signup = () => {
     }, []);
 
     const getEmailChange = (event) => {
-        // email = event.target.value;
         setEmail(event.target.value);
     }
 
     const getPasswordChange = (event) => {
         if (event.target.value.length < 4) {
             setMessage("La contraseña debe tener al menos 4 caracteres");
-            // console.log("La contraseña no es válida");
             setPasswordIsValid(false);
         } else {
             setPassword(event.target.value);
             setMessage("");
-            // password = event.target.value;
             setPasswordIsValid(true);
         }
     }
@@ -78,9 +75,6 @@ export const Signup = () => {
             else {
                 setMessage("Algo fue mal durante el registro");
             }
-            // Lanzar un pop up con resgistro satisfactorio
-            // alert("Registro realizado correctamente");
-            // console.log("Signup handler is working");
         } else {
             setMessage("El formulario no está cumplimentado correctamente");
         }

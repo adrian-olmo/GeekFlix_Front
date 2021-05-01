@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import "./Login.css"
 import { fetchLogin } from "../../services/fetchLogin.js";
-import PopupSignup from "../../components/popupSignup/PopupSignup";
 import Message from "../../components/message/Message";
 import { useHistory } from "react-router-dom"
 import { loginSuccessAction, loginFailedAction } from '../../store/actions/logginActions';
@@ -71,11 +70,8 @@ export const Login = () => {
 
     }
 
-    //Pendiente incluir redireccion a Dashboard
     return (
         <div className="app-body">
-            {/* {validation && <PopupSignup />} */}
-
             {!validation && <div className='login-form-container'>
                 <form className='login-box' onSubmit={loginHandler}>
                     <h2 className='text-h2'>Bienvenido a GeekFlix</h2>

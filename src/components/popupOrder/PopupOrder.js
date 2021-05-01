@@ -17,8 +17,6 @@ const PopupOrder = () => {
             <div className="popup-order">
                 <div className="popup-text">Pedido realizado correctamente</div>
                 <button onClick={() => { goToOrders() }} className="button popup-button">Aceptar</button>
-                {/* Hay que agregar un onClick que nos redirija a la página de login */}
-                {/* onClick={} */}
             </div>
 
         </div>
