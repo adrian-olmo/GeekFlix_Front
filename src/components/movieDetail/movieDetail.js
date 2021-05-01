@@ -1,4 +1,4 @@
-import "./MovieDetail.css"
+import "./movieDetail.css"
 import { useEffect, useState } from "react"
 import { getMovieDetail } from "../../services/fetchDetail"
 import { Link, useParams } from "react-router-dom";
@@ -10,6 +10,7 @@ export const MovieDetail = () => {
 
     let [detail, setDetail] = useState([])
     let [orderSuccess, setOrderSuccess] = useState(false);
+    let [orderFail, setOrderFail] = useState(false);
     let { id } = useParams();
     let token = store.getState().token;
 
@@ -30,9 +31,18 @@ export const MovieDetail = () => {
     const handleOrder = async (id, token) => {
         try {
             const result = await newOrder(id, token);
-            let json = await result.json();
-            setOrderSuccess(true);
-            console.log(json);
+            // let json = await result.json();
+            // console.log(json);
+            if (result.status === 409) {
+                setOrderSuccess(false);
+                setOrderFail(true);
+            }
+
+            else if (result.status === 200) {
+                setOrderSuccess(true);
+                setOrderFail(null);
+            }
+
         } catch (error) {
             console.log({ error: error })
         }
@@ -41,8 +51,9 @@ export const MovieDetail = () => {
 
     return (
         <>
-            {orderSuccess && <PopupOrder></PopupOrder>}
-            {!orderSuccess &&
+            {orderSuccess && <PopupOrder message={"Pedido realizado correctamente"} status={orderSuccess}></PopupOrder>}
+            {orderFail && <PopupOrder message={"El pedido ya existe"} status={orderSuccess}></PopupOrder>}
+            {!orderSuccess && !orderFail &&
 
                 <div className="card">
 
@@ -83,7 +94,7 @@ export const MovieDetail = () => {
                         </div>
 
                         <div className="title-content">
-                            <Link to="/movies">
+                            <Link to="/displayMovies">
                                 <button className="button button-card">Volver</button>
                             </Link>
 
