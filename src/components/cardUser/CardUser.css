@@ -39,3 +39,9 @@
   width: 6rem;
   border-radius: 0.2rem;
 }
+
+.button-catalogue:hover {
+  background-color: darkred;
+  color: white;
+  transition: 0.3s;
+}
