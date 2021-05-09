@@ -52,14 +52,14 @@ export const CardUser = () => {
                     <button className="button button-catalogue" onClick={() => goToMovies()}>Ver catálogo</button>
                     <h2 className="titulo"><strong className="titulos">Tus pedidos</strong></h2>
                 </div>
-                <div className="field-names">
+                {/* <div className="field-names">
 
                     <div className="no-color-text">PosterPath</div>
                     <div>Titulo</div>
                     <div>Inicio alquiler</div>
                     <div>Final alquiler</div>
                     <div>Estado</div>
-                </div>
+                </div> */}
                 {orders.map(order => <CardOrder key={orders.indexOf(order)} id={order.id} email={order.email} title={order.title} start={order.orderStart.substring(0, 10)} end={order.orderEnd.substring(0, 10)} poster={order.poster} status={order.estado}></CardOrder>)}
             </div>
         </div>
